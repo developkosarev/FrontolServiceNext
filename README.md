@@ -1,4 +1,14 @@
+## Build 
+```
+docker build --tag frontol-service-next:v0.1 --file Dockerfile .
 
+docker tag frontol-service-next:v0.1 ghcr.io/developkosarev/frontol-service-next:v0.1
+docker images ghcr.io/developkosarev/*
+docker push ghcr.io/developkosarev/frontol-service-next:v0.1 
+docker run -d -p 3000:3000 --name frontol-service-next frontol-service-next:v0.1
+```    
+
+## Bootstrap
 npm install bootstrap
 https://github.com/seriwb/nextjs-bootstrap-sample
 

@@ -5,8 +5,8 @@ const nextConfig = {
     //basePath: '/docs',
     //assetPrefix: isProd ? 'https://cdn.mydomain.com' : undefined,    
 
-    output: isProd ? 'export': undefined,
-    distDir: isProd ? 'dist' : undefined
+    //output: isProd ? 'export': undefined,
+    //distDir: isProd ? 'dist' : undefined
 }
 
 module.exports = nextConfig
