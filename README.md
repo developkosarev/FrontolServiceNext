@@ -1,11 +1,11 @@
 ## Build 
 ```
-docker build --tag frontol-service-next:v0.1 --file Dockerfile .
+docker build --tag frontol-service-next:v0.0.2 --file Dockerfile .
 
-docker tag frontol-service-next:v0.1 ghcr.io/developkosarev/frontol-service-next:v0.1
+docker tag frontol-service-next:v0.0.2 ghcr.io/developkosarev/frontol-service-next:v0.0.2
 docker images ghcr.io/developkosarev/*
-docker push ghcr.io/developkosarev/frontol-service-next:v0.1 
-docker run -d -p 3000:3000 --name frontol-service-next frontol-service-next:v0.1
+docker push ghcr.io/developkosarev/frontol-service-next:v0.0.2
+docker run -d -p 3000:3000 --name frontol-service-next frontol-service-next:v0.0.2
 ```    
 
 ## Bootstrap
