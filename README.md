@@ -15,6 +15,11 @@ https://github.com/seriwb/nextjs-bootstrap-sample
 npm install -D http-server
 npx http-server dist
 
+## Tags
+```
+git tag v0.0.3
+git push --tags
+```
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
