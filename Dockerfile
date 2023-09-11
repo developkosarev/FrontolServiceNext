@@ -2,7 +2,7 @@ FROM node:20-alpine
 LABEL org.opencontainers.image.source https://github.com/developkosarev/FrontolServiceNext
 LABEL org.opencontainers.image.title="FrontolServiceNext"
 LABEL org.opencontainers.image.authors="develop.kosarev@gmail.com"
-LABEL org.opencontainers.image.version="0.0.2"
+LABEL org.opencontainers.image.version="0.0.3"
 
 WORKDIR /opt/app
 ADD package.json package.json
