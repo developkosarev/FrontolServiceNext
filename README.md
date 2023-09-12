@@ -6,6 +6,7 @@ docker tag frontol-service-next:v0.0.2 ghcr.io/developkosarev/frontol-service-ne
 docker images ghcr.io/developkosarev/*
 docker push ghcr.io/developkosarev/frontol-service-next:v0.0.2
 docker run -d -p 3000:3000 --name frontol-service-next frontol-service-next:v0.0.2
+docker run -d -p 3000:3000 --name frontol-service-next frontolservicenext:v0.0.3
 ```    
 
 ## Bootstrap

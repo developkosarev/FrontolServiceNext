@@ -14,7 +14,7 @@ export default function Page() {
         <div className="container">
             <Htag tag='h1'>Скачать Frontol Service Add-on</Htag>
             <div className="btn-download">
-                <a href="FrontolServiceAddon/FrontolServiceAddons.zip" className="btn btn-primary btn-lg" role="button">
+                <a href="/FrontolServiceAddon/FrontolServiceAddons.zip" className="btn btn-primary btn-lg" role="button">
                     Скачать
                 </a>
             </div>
