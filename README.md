@@ -22,6 +22,11 @@ git tag v0.0.3
 git push --tags
 ```
 
+##Docker compose
+```
+docker compose up
+```
+
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
