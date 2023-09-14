@@ -5,6 +5,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Footer } from "../components/Footer/Footer";
 import { Navbar } from "../components/Navbar/Navbar";
+import { Gtm } from "../components/Gtm/Gtm";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,6 +20,7 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
     <html lang="ru">
       <body className={inter.className}>
         <div className="wrapper">
+            <Gtm/>
             <Navbar/>
             <div className="content container-xxl my-md-4 bd-layout">
                 <main>{children}</main>
