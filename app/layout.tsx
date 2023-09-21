@@ -6,6 +6,7 @@ import { Inter } from 'next/font/google'
 import { Footer } from "../components/Footer/Footer";
 import { Navbar } from "../components/Navbar/Navbar";
 import { Gtm } from "../components/Gtm/Gtm";
+import { CookieConsent } from "../components/CookieConsent/CookieConsent";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -27,6 +28,7 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
             </div>
             <Footer/>
         </div>
+        <CookieConsent/>
       </body>
     </html>
     )
