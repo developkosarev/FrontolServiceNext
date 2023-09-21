@@ -2,6 +2,7 @@ name: Publish Docker image
 env:
   DEPLOY_PACKAGE_NAME : "frontol-service-next-${{ github.sha }}"
   DEPLOY_VERSION : "v0.0.3"
+  DEPLOY_FOLDER : "docker"
 
 #on:
 #  release:
@@ -52,3 +53,31 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
+  deploy-frontol:
+    name: Deploy
+    needs: build-frontol
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 01. Execure few commands
+        run: |
+          echo "Deploy application"
+          echo "Appication name: ${{ env.DEPLOY_PACKAGE_NAME }}"
+
+      - name: 02. Install SSH Key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          known_hosts: ${{ secrets.SSH_HOST }}
+
+      - name: 03. Adding Known Hosts
+        run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+
+      - name: 04. Create symbolic link (ln file_sourse link)
+        run: |
+          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} \
+          "cd /home/${{ secrets.SSH_USER }}/${{ env.DEPLOY_FOLDER }} \
+          && docker compose -f compose-frontol.yml pull \
+          && docker compose -f compose-frontol.yml down \
+          && docker compose -f compose-frontol.yml up -d"
