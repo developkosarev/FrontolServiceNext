@@ -75,7 +75,7 @@ jobs:
       - name: 03. Adding Known Hosts
         run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
-      - name: 04. Create symbolic link (ln file_sourse link)
+      - name: 04. Restart container
         run: |
           ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} \
           "cd /home/${{ secrets.SSH_USER }}/${{ env.DEPLOY_FOLDER }} \
