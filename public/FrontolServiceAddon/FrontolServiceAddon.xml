@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <sharpUpdate>
   <update>
-    <version>1.0.0.4</version>
+    <version>1.0.0.5</version>
     <url>https://frontol.dk-dev.space/FrontolServiceAddon/FrontolServiceAddon.exe</url>
     <filePath>./FrontolServiceAddon.exe</filePath>
-    <md5>1950D23431745BFE18CDB35FCB5C58FB</md5>
-    <description>Update auto: 08/10/2023 17:16:10 :1.Updated a label.</description>
+    <md5>52C0E90DE5DE247BF0275C20280A3076</md5>
+    <description>Update auto: 08/10/2023 17:38:17 :1.Updated a label.</description>
     <launchArgs />
   </update>
   <update>
@@ -13,7 +13,7 @@
     <url>https://frontol.dk-dev.space/FrontolServiceAddon/FirebirdSql.Data.FirebirdClient.dll</url>
     <filePath>./FirebirdSql.Data.FirebirdClient.dll</filePath>
     <md5>74E38B63E15A4D67FC1F4D1EAC89B1AE</md5>
-    <description>Update auto: 08/10/2023 17:16:10 :1.Updated a label.</description>
+    <description>Update auto: 08/10/2023 17:38:17 :1.Updated a label.</description>
     <launchArgs />
   </update>
   <update>
@@ -21,7 +21,7 @@
     <url>https://frontol.dk-dev.space/FrontolServiceAddon/FrontolService.DAL.dll</url>
     <filePath>./FrontolService.DAL.dll</filePath>
     <md5>B0D87A34A8B74F40DC8E02231136F012</md5>
-    <description>Update auto: 08/10/2023 17:16:10 :1.Updated a label.</description>
+    <description>Update auto: 08/10/2023 17:38:17 :1.Updated a label.</description>
     <launchArgs />
   </update>
   <update>
@@ -29,7 +29,7 @@
     <url>https://frontol.dk-dev.space/FrontolServiceAddon/Ionic.Zip.dll</url>
     <filePath>./Ionic.Zip.dll</filePath>
     <md5>DA9FD3B0A49625FC38C647840D978AA4</md5>
-    <description>Update auto: 08/10/2023 17:16:11 :1.Updated a label.</description>
+    <description>Update auto: 08/10/2023 17:38:17 :1.Updated a label.</description>
     <launchArgs />
   </update>
   <update>
@@ -37,7 +37,7 @@
     <url>https://frontol.dk-dev.space/FrontolServiceAddon/log4net.dll</url>
     <filePath>./log4net.dll</filePath>
     <md5>7EA1429E71D83A1CCAA0942C4D7F1C41</md5>
-    <description>Update auto: 08/10/2023 17:16:11 :1.Updated a label.</description>
+    <description>Update auto: 08/10/2023 17:38:17 :1.Updated a label.</description>
     <launchArgs />
   </update>
   <update>
@@ -45,7 +45,7 @@
     <url>https://frontol.dk-dev.space/FrontolServiceAddon/SharpUpdate.dll</url>
     <filePath>./SharpUpdate.dll</filePath>
     <md5>0B3B673BF06D0643CEE58D0B31DEF679</md5>
-    <description>Update auto: 08/10/2023 17:16:11 :1.Updated a label.</description>
+    <description>Update auto: 08/10/2023 17:38:17 :1.Updated a label.</description>
     <launchArgs />
   </update>
 </sharpUpdate>
