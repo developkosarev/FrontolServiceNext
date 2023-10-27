@@ -3,6 +3,15 @@ import Script from 'next/script'
 
 export const Gtm = (): JSX.Element => {
     const TRACKING_ID = process.env.NEXT_PUBLIC_GTM_ID!;
+    const isProduction = process.env.NODE_ENV === 'production';
+
+    if (!isProduction) {
+        return (
+            <Script id="google-tag-manager" strategy="afterInteractive">
+                {`console.log('GTM disabled')`}
+            </Script>
+        )
+    }
 
     return (
         <Script id="google-tag-manager" strategy="afterInteractive">
