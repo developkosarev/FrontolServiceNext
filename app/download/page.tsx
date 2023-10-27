@@ -22,20 +22,18 @@ export default function Page() {
                 Распакуйте zip файл в любой каталог по вашему усмотрению например c:\FrontolServiceAddon
                 Запустите файл FrontolServiceAddon.exe.
             </p>
-            <Image className="img-fluid rounded mx-auto d-block" src="/img/Folder.jpg" width={500} height={500} alt="Папка с файлами"/>
+            <Image className="img-fluid rounded mx-auto d-block"
+                   src="/img/Folder.jpg" width={500} height={500}
+                   alt="Папка с файлами"/>
             <p>Перейдите в меню настройки задайте подключение в базе данных фронтол.</p>
 
-            <Image className="img-fluid rounded mx-auto d-block lazyload"
-                   src="/img/ProfileForms.jpg"
-                   width={347} height={397} unoptimized
+            <Image className="img-fluid rounded mx-auto d-block"
+                   src="/img/ProfileForms.jpg" width={347} height={397}
                    alt="Настроки"/>
-            <p>
-                Настройте задачи. Измените сверки свертки если вам это неободимо по умолчанию каждые 6 часов.
-            </p>
+            <p>Настройте задачи. Измените сверки свертки если вам это неободимо по умолчанию каждые 6 часов.</p>
 
-            <Image className="img-fluid rounded mx-auto d-block lazyload"
-                   src="/img/Tasks.jpg"
-                   width={347} height={397} unoptimized
+            <Image className="img-fluid rounded mx-auto d-block"
+                   src="/img/Tasks.jpg" width={347} height={397}
                    alt="Задачи"/>
 
             <p>
@@ -46,16 +44,16 @@ export default function Page() {
                     Запрос реквизитов</a>
             </p>
 
-            <Image className="img-fluid rounded mx-auto d-block lazyload"
-                   src="/img/Ftp.jpg" width={347} height={397} alt="Настроки ftp"/>
+            <Image className="img-fluid rounded mx-auto d-block"
+                   src="/img/Ftp.jpg" width={347} height={397}
+                   alt="Настроки ftp"/>
 
             <p>
                 Далее можно запустить, остановить свертку остатков вручную Операции Запустить Остановить.
             </p>
 
-            <Image className="img-fluid rounded mx-auto d-block lazyload"
-                   src="/img/Operation.jpg"
-                   width={332} height={144} unoptimized
+            <Image className="img-fluid rounded mx-auto d-block"
+                   src="/img/Operation.jpg" width={332} height={144}
                    alt="Операции запусить, остановить"/>
 
             <p>
@@ -74,9 +72,8 @@ export default function Page() {
                 Утилиту необходимо установить в автозагрузку Frontol
             </p>
 
-            <Image className="img-fluid rounded mx-auto d-block lazyload"
-                   src="/img/AutoStart.jpg"
-                   width={952} height={513} unoptimized
+            <Image className="img-fluid rounded mx-auto d-block"
+                   src="/img/AutoStart.jpg" width={952} height={513}
                    alt="Автозагрузка"/>
         </div>
     )
