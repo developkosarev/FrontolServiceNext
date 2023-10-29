@@ -22,7 +22,7 @@ export default function Page() {
               Мы подготовили небольшой файл с тестовыми данными. Он содержит 5 тыс. продуктов (Product01, Product02 ...)
             </p>
             <div className="btn-download mb-3">
-              <a href="/files/sc.zip" className="btn btn-secondary btn-lg" role="button">
+              <a href="/files/sc.zip" className="btn btn-secondary btn-sm" role="button">
                 Скачать
               </a>
             </div>
@@ -50,8 +50,13 @@ export default function Page() {
             Также заметно увеличивается время загрузки справочника.
           </p>
           <p>
-            После этого можно запустить
+            После этого можно скачать и запустить <strong>FrontolServiceAddon</strong>.
           </p>
+          <div className="btn-download">
+            <a href="/FrontolServiceAddon/FrontolServiceAddon.zip" className="btn btn-primary btn-lg" role="button">
+              Скачать
+            </a>
+          </div>
         </div>
     )
 }
