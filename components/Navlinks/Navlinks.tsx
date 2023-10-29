@@ -3,19 +3,21 @@
 import React from "react";
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { LinkItem } from "./LinkItem";
+
+const LINKS: Array<LinkItem> = [
+    new LinkItem('/', 'О программе'),
+    new LinkItem('/download', 'Скачать'),
+    new LinkItem('/overview', 'Описание'),
+    new LinkItem('/contact', 'Контакты')
+];
 
 export const Navlinks = (): JSX.Element => {
     const pathname = usePathname()
 
-    const items = [
-        {href: '/', name: 'О программе'},
-        {href: '/download', name: 'Скачать'},
-        {href: '/contact', name: 'Контакты'}
-    ];
-
     return (
         <ul className="navbar-nav me-auto">
-            {items.map((link) => {
+            {LINKS.map((link) => {
                 const isActive = pathname === link.href
                 const activeClass = isActive ? 'active' : ''
 

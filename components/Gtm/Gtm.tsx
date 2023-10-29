@@ -8,7 +8,14 @@ export const Gtm = (): JSX.Element => {
     if (!isProduction) {
         return (
             <Script id="google-tag-manager" strategy="afterInteractive">
-                {`console.log('GTM disabled')`}
+
+                {`
+                    console.log('GTM disabled')
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() {
+                        dataLayer.push(arguments);
+                    }                
+                `}
             </Script>
         )
     }

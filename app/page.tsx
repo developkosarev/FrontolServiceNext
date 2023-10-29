@@ -15,7 +15,7 @@ export default function Home() {
 
       <h2>Используйте стандартные настроки Frontol</h2>
 
-      <Image className="img-fluid rounded mx-auto d-block"
+      <Image className="img-fluid rounded mx-auto d-block mb-3"
              src="/img/SystemDb.jpg" width={946} height={501} priority
              alt="Настроки свертки остатков"/>
 

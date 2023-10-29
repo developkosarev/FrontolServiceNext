@@ -4,9 +4,9 @@ import type { Metadata } from 'next'
 import {Htag} from "../../components/Htag/Htag";
 
 export const metadata: Metadata = {
-    title: 'Скачать FrontolServiceAddons',
-    description: 'Скачать утилиту FrontolServiceAddons',
-    keywords: 'Скачать FrontolServiceAddons, Frontol cветка, Frontol рост базы данных, Frontol remaind'
+    title: 'Скачать FrontolServiceAddon',
+    description: 'Скачать утилиту FrontolServiceAddon',
+    keywords: 'Скачать FrontolServiceAddon, Frontol cветка, Frontol рост базы данных, Frontol remaind'
 }
 
 export default function Page() {
@@ -14,7 +14,7 @@ export default function Page() {
         <div className="container">
             <Htag tag='h1'>Скачать Frontol Service Add-on</Htag>
             <div className="btn-download">
-                <a href="/FrontolServiceAddon/FrontolServiceAddons.zip" className="btn btn-primary btn-lg" role="button">
+                <a href="/FrontolServiceAddon/FrontolServiceAddon.zip" className="btn btn-primary btn-lg" role="button">
                     Скачать
                 </a>
             </div>
@@ -22,18 +22,18 @@ export default function Page() {
                 Распакуйте zip файл в любой каталог по вашему усмотрению например c:\FrontolServiceAddon
                 Запустите файл FrontolServiceAddon.exe.
             </p>
-            <Image className="img-fluid rounded mx-auto d-block"
-                   src="/img/Folder.jpg" width={500} height={500}
+            <Image className="img-fluid rounded mx-auto d-block mb-3"
+                   src="/img/Folder.jpg" width={500} height={500} priority
                    alt="Папка с файлами"/>
             <p>Перейдите в меню настройки задайте подключение в базе данных фронтол.</p>
 
-            <Image className="img-fluid rounded mx-auto d-block"
-                   src="/img/ProfileForms.jpg" width={347} height={397}
+            <Image className="img-fluid rounded mx-auto d-block mb-3"
+                   src="/img/ProfileForms.jpg" width={347} height={397} sizes="100vw"
                    alt="Настроки"/>
             <p>Настройте задачи. Измените сверки свертки если вам это неободимо по умолчанию каждые 6 часов.</p>
 
-            <Image className="img-fluid rounded mx-auto d-block"
-                   src="/img/Tasks.jpg" width={347} height={397}
+            <Image className="img-fluid rounded mx-auto d-block mb-3"
+                   src="/img/Tasks.jpg" width={347} height={397} sizes="100vw"
                    alt="Задачи"/>
 
             <p>
@@ -44,16 +44,16 @@ export default function Page() {
                     Запрос реквизитов</a>
             </p>
 
-            <Image className="img-fluid rounded mx-auto d-block"
-                   src="/img/Ftp.jpg" width={347} height={397}
+            <Image className="img-fluid rounded mx-auto d-block mb-3"
+                   src="/img/Ftp.jpg" width={347} height={397} sizes="100vw"
                    alt="Настроки ftp"/>
 
             <p>
                 Далее можно запустить, остановить свертку остатков вручную Операции Запустить Остановить.
             </p>
 
-            <Image className="img-fluid rounded mx-auto d-block"
-                   src="/img/Operation.jpg" width={332} height={144}
+            <Image className="img-fluid rounded mx-auto d-block mb-3"
+                   src="/img/Operation.jpg" width={332} height={144} sizes="100vw"
                    alt="Операции запусить, остановить"/>
 
             <p>
@@ -72,8 +72,8 @@ export default function Page() {
                 Утилиту необходимо установить в автозагрузку Frontol
             </p>
 
-            <Image className="img-fluid rounded mx-auto d-block"
-                   src="/img/AutoStart.jpg" width={952} height={513}
+            <Image className="img-fluid rounded mx-auto d-block mb-3"
+                   src="/img/AutoStart.jpg" width={952} height={513} sizes="100vw"
                    alt="Автозагрузка"/>
         </div>
     )

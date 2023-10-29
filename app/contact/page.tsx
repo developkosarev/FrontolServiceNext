@@ -3,9 +3,9 @@ import {Metadata} from "next";
 import { Htag } from "../../components/Htag/Htag";
 
 export const metadata: Metadata = {
-    title: 'Скачать FrontolServiceAddons',
-    description: 'Скачать утилиту FrontolServiceAddons',
-    keywords: 'Скачать FrontolServiceAddons, Frontol cветка, Frontol рост базы данных, Frontol remaind'
+    title: 'Контакты',
+    description: 'Контакты',
+    keywords: 'Frontol cветка, Frontol рост базы данных, Frontol remaind'
 }
 
 export default function Page() {

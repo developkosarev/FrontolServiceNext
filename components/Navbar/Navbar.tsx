@@ -4,7 +4,7 @@ import { Navlinks } from "../Navlinks/Navlinks";
 
 export const Navbar = (): JSX.Element => {
     return (
-        <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
+        <nav className="navbar navbar-expand-md navbar-dark bg-dark">
             <div className="container-fluid">
                 <Link className="navbar-brand" href="/">Frontol Service Addon</Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse"

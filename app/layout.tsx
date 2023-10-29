@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Решение проблемы роста базы данных Frontol',
   description: 'Утилита для обслуживания баз данных Frontol, решает проблему роста базы данных',
-  keywords: 'Frontol cветка, Frontol рост базы данных, Frontol remaind'
+  keywords: 'Frontol cветка, Фронтол тормозит поиск, Frontol рост базы данных, Frontol remaind'
 }
 
 export default function RootLayout({children}: { children: React.ReactNode }) {
