@@ -1,13 +1,10 @@
 import React from "react";
-import { Metadata } from "next";
 import { Htag } from "@/components/Htag/Htag";
-import MapboxAutofill from "@/components/MapboxAutofill/MapboxAutofill";
+import dynamic from 'next/dynamic'
 
-export const metadata: Metadata = {
-    title: 'mapbox',
-    description: 'mapbox',
-    keywords: 'mapbox autofill'
-}
+const MapboxAutofill = dynamic(() => import('@/components/MapboxAutofill/MapboxAutofill'), {
+  ssr: false,
+})
 
 export default function Page() {
     return (

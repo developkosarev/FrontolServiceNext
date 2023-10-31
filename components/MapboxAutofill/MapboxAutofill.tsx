@@ -14,7 +14,7 @@ export default function MapboxAutofill() {
     const [token, setToken] = useState('');
 
     useEffect(() => {
-        const accessToken = `${MAPBOX_ACCESS_TOKEN}`;
+        const accessToken = `${MAPBOX_ACCESS_TOKEN}`
         setToken(accessToken)
         config.accessToken = accessToken;
     }, [])
@@ -22,7 +22,7 @@ export default function MapboxAutofill() {
     const { formRef, showConfirm } = useConfirmAddress({
         minimap: true,
         skipConfirmModal: (feature) => {
-            ['exact', 'high'].includes(feature.properties.match_code.confidence)
+            return ['exact', 'high'].includes(feature.properties.match_code.confidence)
         }
     });
 
@@ -65,7 +65,6 @@ export default function MapboxAutofill() {
         <>
             <form ref={formRef} onSubmit={handleSubmit}>
                 <div className="mb-3">
-                    {/* Input form */}
                     <label className="form-label">Address</label>
                     <AddressAutofill accessToken={token} onRetrieve={handleRetrieve}>
                         <input
@@ -78,63 +77,58 @@ export default function MapboxAutofill() {
                 </div>
 
                 { !showFormExpanded &&
-                    <div id="manual-entry"
-                        onClick={() => setShowFormExpanded(true)}
-                    >
+                    <div id="manual-entry" onClick={() => setShowFormExpanded(true)}>
                         Enter an address manually
                     </div>
                 }
 
                 <div className="mb-3" style={{ display: showFormExpanded ? 'block' : 'none' }}>
-                    <label className="form-label">Address Line 2</label>
-                    <input
-                        className="form-control"
-                        placeholder="Apartment, suite, unit, building, floor, etc."
-                        autoComplete="address-line2"
-                    />
-                </div>
-                <div className="mb-3">
-                    <label className="form-label">City</label>
-                    <input
-                        className="form-control"
-                        placeholder="City"
-                        autoComplete="address-level2"
-                    />
-                </div>
-                <div className="mb-3">
-                    <label className="form-label">State / Region</label>
-                    <input
-                        className="form-control"
-                        placeholder="State / Region"
-                        autoComplete="address-level1"
-                    />
-                </div>
-                <div className="mb-3">
-                    <label className="form-label">ZIP / Postcode</label>
-                    <input
-                        className="form-control"
-                        placeholder="ZIP / Postcode"
-                        autoComplete="postal-code"
-                    />
-                </div>
-
-                <div className="mb-3">
-                    {/* Visual confirmation map */}
-                    <div
-                        id="minimap-container"
-                        className="h240 w360 relative mt18"
-                    >
-                        <AddressMinimap
-                            canAdjustMarker={true}
-                            satelliteToggle={true}
-                            feature={feature}
-                            show={showMinimap}
-                            onSaveMarkerLocation={handleSaveMarkerLocation}
+                    <div className="mb-3" style={{ display: showFormExpanded ? 'block' : 'none' }}>
+                        <label className="form-label">Address Line 2</label>
+                        <input
+                            className="form-control"
+                            placeholder="Apartment, suite, unit, building, floor, etc."
+                            autoComplete="address-line2"
                         />
+                    </div>
+                    <div className="mb-3">
+                        <label className="form-label">City</label>
+                        <input
+                            className="form-control"
+                            placeholder="City"
+                            autoComplete="address-level2"
+                        />
+                    </div>
+                    <div className="mb-3">
+                        <label className="form-label">State / Region</label>
+                        <input
+                            className="form-control"
+                            placeholder="State / Region"
+                            autoComplete="address-level1"
+                        />
+                    </div>
+                    <div className="mb-3">
+                        <label className="form-label">ZIP / Postcode</label>
+                        <input
+                            className="form-control"
+                            placeholder="ZIP / Postcode"
+                            autoComplete="postal-code"
+                        />
+                    </div>
+
+                    <div className="mb-3">
+                        <div id="minimap-container">
+                            <AddressMinimap
+                                canAdjustMarker={true}
+                                satelliteToggle={true}
+                                feature={feature}
+                                show={showMinimap}
+                                onSaveMarkerLocation={handleSaveMarkerLocation}
+                            />
+                        </div>
                     </div>
                 </div>
 
-                {/* Form buttons */}
                 { showFormExpanded &&
                     <div className="mb-3">
                         <button type="submit" className="btn btn-primary" id="btn-confirm">
@@ -148,10 +142,9 @@ export default function MapboxAutofill() {
             </form>
 
 
-            {/* Validation text */}
             { showValidationText &&
                 <div id="validation-msg" className="mt24 txt-m txt-bold">Order successfully submitted.</div>
             }
         </>
     );
-};
+}
