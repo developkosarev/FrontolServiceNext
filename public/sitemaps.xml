@@ -3,17 +3,22 @@
 	<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 	<loc>https://frontol.dk-dev.space/</loc>
-	<lastmod>2020-02-29T17:59:53+01:00</lastmod>
+	<lastmod>2023-02-29T17:59:53+01:00</lastmod>
 	<priority>1.0</priority>
 </url>
 <url>
-	<loc>https://frontol.dk-dev.space/download.html</loc>
-	<lastmod>2020-02-29T17:59:53+01:00</lastmod>
+	<loc>https://frontol.dk-dev.space/download</loc>
+	<lastmod>2023-10-29T17:59:55+01:00</lastmod>
 	<priority>1.0</priority>
 </url>
 <url>
-	<loc>https://frontol.dk-dev.space/contact.html</loc>
-	<lastmod>2020-02-29T17:59:55+01:00</lastmod>
+	<loc>https://frontol.dk-dev.space/contact</loc>
+	<lastmod>2023-10-29T17:59:55+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://frontol.dk-dev.space/overview</loc>
+	<lastmod>2023-10-29T17:59:55+01:00</lastmod>
 	<priority>1.0</priority>
 </url>
 </urlset>
