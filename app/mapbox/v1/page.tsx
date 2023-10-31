@@ -13,7 +13,7 @@ export default function Page() {
     return (
         <div className="container">
             <Htag tag='h1'>Autofill checkout demo (React)</Htag>
-          <MapboxAutofill></MapboxAutofill>
+            <MapboxAutofill/>
         </div>
     )
 }
