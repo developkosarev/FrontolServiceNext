@@ -1,7 +1,7 @@
 import { NextRequest } from 'next/server'
 
 function generateSiteMap() {
-    return `<?xml version="1.0" encoding="UTF-8"?>
+  return `<?xml version="1.0" encoding="UTF-8"?>
            <sharpUpdate>
               <update>
                 <version>1.0.0.2</version>
@@ -31,10 +31,10 @@ function generateSiteMap() {
 }
 
 export async function GET(request: NextRequest) {
-    const sitemap = generateSiteMap();
+  const sitemap = generateSiteMap();
 
-    return new Response(sitemap, {
-        status: 200,
-        headers: { 'Content-Type': 'text/xml' }
-    })
+  return new Response(sitemap, {
+    status: 200,
+    headers: { 'Content-Type': 'text/xml' }
+  })
 }
