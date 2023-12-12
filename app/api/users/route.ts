@@ -5,5 +5,10 @@ export async function GET(request: Request) {
   //const referer: string = headersList.get('referer') as string
   const referer: string = '2';
 
-  return new Response('Hello, users.js!', { status: 200, headers: { referer: referer } })
+  const body = 'Hello, users.js!'
+
+  return new Response(body, {
+        status: 200,
+        headers: { referer: referer }
+      })
 }
