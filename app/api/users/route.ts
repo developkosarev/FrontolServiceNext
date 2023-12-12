@@ -1,9 +1,14 @@
 import { headers } from 'next/headers'
 
+const isExport = process.env.APP_ENV_EXPORT === 'production'
+
 export async function GET(request: Request) {
-  //const headersList = headers()
-  //const referer: string = headersList.get('referer') as string
-  const referer: string = '2';
+  let referer: string = 'export';
+
+  if (!isExport) {
+    const headersList = headers()
+    referer = headersList.get('referer') as string
+  }
 
   const body = 'Hello, users.js!'
 
