@@ -24,10 +24,10 @@ jobs:
         uses: shimataro/ssh-key-action@v2
         with:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          known_hosts: 2a02:8109:838c:c00:215:5dff:fefd:303
+          known_hosts: 95.91.215.244
 
       - name: 03. Adding Known Hosts
-        run: ssh-keyscan -H 2a02:8109:838c:c00:215:5dff:fefd:303
+        run: ssh-keyscan -H 95.91.215.244
 
       #- name: 02. Ping google
       #  run: ping google.com -c4
