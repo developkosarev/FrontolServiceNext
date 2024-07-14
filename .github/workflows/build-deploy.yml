@@ -77,7 +77,7 @@ jobs:
 
       - name: 04. Restart container
         run: |
-          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} \
+          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST_V2 }} \
           "cd /home/${{ secrets.SSH_USER }}/${{ env.DEPLOY_FOLDER }} \
           && docker compose -f compose-frontol.yml pull \
           && docker compose -f compose-frontol.yml down \
