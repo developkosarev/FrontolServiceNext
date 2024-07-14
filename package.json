@@ -10,6 +10,7 @@
     "export": "APP_ENV_EXPORT=production next build"
   },
   "dependencies": {
+    "@mapbox/search-js-react": "^1.0.0-beta.18",
     "bootstrap": "^5.3.1",
     "next": "13.4.12",
     "react": "18.2.0",
