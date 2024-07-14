@@ -1,0 +1,34 @@
+name: Ping hosts
+env:
+  DEPLOY_PACKAGE_NAME : "frontol-service-next-${{ github.sha }}"
+  DEPLOY_VERSION : "v0.0.1"
+  DEPLOY_FOLDER : "docker"
+
+#on:
+#  release:
+#    types: [published]
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [add-action-ping]
+    #tags:
+    #    - 'v*'
+
+jobs:
+  deploy-frontol:
+    name: Deploy
+    needs: push_to_registries
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 01. Execute few commands
+        run: |
+          echo "Deploy application"
+          echo "Appication name: ${{ env.DEPLOY_PACKAGE_NAME }}"
+
+      - name: 02. Ping google
+        run: ping ipv6.google.com -c4
+
+      - name: 03. Ping host
+        run: ping ${{ secrets.SSH_HOST_V2 }} -c4
