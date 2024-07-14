@@ -21,7 +21,10 @@ jobs:
           echo "Appication name: ${{ env.DEPLOY_PACKAGE_NAME }}"
 
       - name: 02. Ping google
+        run: ping google.com -c4
+
+      - name: 03. Ping google
         run: ping ipv6.google.com -c4
 
-      - name: 03. Ping host
+      - name: 04. Ping host
         run: ping ${{ secrets.SSH_HOST_V2 }} -c4
