@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-sitemap: http://cfgsoft.github.io/sitemaps.xml
