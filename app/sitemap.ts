@@ -7,18 +7,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
         {
             url: `${NEXT_PUBLIC_DOMAIN}`,
             lastModified: new Date(),
+            priority: 1,
         },
         {
             url: `${NEXT_PUBLIC_DOMAIN}/about`,
             lastModified: new Date(),
+            priority: 1,
         },
         {
             url: `${NEXT_PUBLIC_DOMAIN}/contact`,
             lastModified: new Date(),
+            priority: 1,
         },
         {
             url: `${NEXT_PUBLIC_DOMAIN}/overview`,
             lastModified: new Date(),
+            priority: 1,
         },
     ]
 }
