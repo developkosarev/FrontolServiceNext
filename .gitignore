@@ -37,3 +37,7 @@ yarn-error.log*
 next-env.d.ts
 
 dist/*
+
+# storybook
+*storybook.log
+/storybook-static
