@@ -27,6 +27,15 @@ git push --tags
 docker compose up
 ```
 
+## Storybook
+```
+npx storybook build
+npx http-server storybook-static
+
+docker build --tag frontol-service-next-storybook:v0.0.1 --file Dockerfile-storybook .
+docker run -d -p 80:80 --name frontol-service-next-storybook frontol-service-next-storybook:v0.0.1
+```
+
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
