@@ -24,10 +24,10 @@ jobs:
       contents: read
     steps:
       - name: 01. Check out the repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
             
       - name: 02. Log in to the Container registry
-        uses: docker/login-action@v2
+        uses: docker/login-action@v3
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
@@ -35,7 +35,7 @@ jobs:
 
       - name: 03. Extract metadata (tags, labels) for Docker
         id: meta
-        uses: docker/metadata-action@v4
+        uses: docker/metadata-action@v5
         with:
           images: |
             ghcr.io/${{ github.repository }}
@@ -48,7 +48,7 @@ jobs:
           echo "Labels: ${{ steps.meta.outputs.labels }}"
 
       - name: 05. Build and push Docker images
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v6
         with:
           context: .
           push: true
