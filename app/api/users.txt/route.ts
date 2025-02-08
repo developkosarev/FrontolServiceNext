@@ -6,7 +6,7 @@ export async function GET(request: Request) {
   let referer: string = 'export';
 
   if (!isExport) {
-    const headersList = headers()
+    const headersList = await headers()
     referer = headersList.get('referer') as string
   }
 

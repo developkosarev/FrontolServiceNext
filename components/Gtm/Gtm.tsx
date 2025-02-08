@@ -1,7 +1,7 @@
 import React from "react";
 import Script from 'next/script'
 
-export const Gtm = (): JSX.Element => {
+export const Gtm = (): React.ReactElement => {
     const TRACKING_ID = process.env.NEXT_PUBLIC_GTM_ID!;
     const isProduction = process.env.NODE_ENV === 'production';
 
