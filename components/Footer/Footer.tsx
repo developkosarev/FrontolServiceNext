@@ -1,10 +1,10 @@
 'use client'
 
-import React, {useEffect} from "react"
+import React, { useEffect } from "react"
 import variables from '@/app/variables.module.scss'
 import styles from './Footer.module.scss'
 
-export const Footer = (): JSX.Element => {
+export const Footer = (): React.ReactElement => {
     useEffect(() => {
         // @ts-ignore
         //import('bootstrap/dist/js/bootstrap');

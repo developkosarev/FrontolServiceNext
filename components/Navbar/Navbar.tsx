@@ -2,7 +2,7 @@ import React from "react";
 import Link from 'next/link'
 import { Navlinks } from "../Navlinks/Navlinks";
 
-export const Navbar = (): JSX.Element => {
+export const Navbar = (): React.ReactElement => {
     return (
         <nav className="navbar navbar-expand-md navbar-dark bg-dark">
             <div className="container-fluid">

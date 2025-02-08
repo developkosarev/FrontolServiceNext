@@ -34,7 +34,7 @@ const updateConsent = () => {
     });
 }
 
-export const CookieConsent = (): JSX.Element => {
+export const CookieConsent = (): React.ReactElement => {
     const [isShowed, setIsShowed] = useState(false)
     useEffect(() => {
         if (hasConsented()) {

@@ -1,5 +1,7 @@
 import { NextRequest } from 'next/server'
 
+export const dynamic = 'force-static'
+
 function generateSiteMap() {
   return `<?xml version="1.0" encoding="UTF-8"?>
            <sharpUpdate>

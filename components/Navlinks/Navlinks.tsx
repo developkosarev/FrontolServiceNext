@@ -12,7 +12,7 @@ const LINKS: Array<LinkItem> = [
     new LinkItem('/contact', 'Контакты')
 ];
 
-export const Navlinks = (): JSX.Element => {
+export const Navlinks = (): React.ReactElement => {
     const pathname = usePathname()
 
     return (
