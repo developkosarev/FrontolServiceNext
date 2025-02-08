@@ -1,5 +1,7 @@
 import { headers } from 'next/headers'
 
+export const dynamic = 'force-static'
+
 const isExport = process.env.APP_ENV_EXPORT === 'production'
 
 export async function GET(request: Request) {

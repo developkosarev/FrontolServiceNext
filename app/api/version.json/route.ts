@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 
+export const dynamic = 'force-static'
+
 export function GET(request: NextRequest) {
   const data = {
     message: 'Hello from Next.js!',

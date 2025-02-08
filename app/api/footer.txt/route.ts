@@ -1,6 +1,8 @@
 import { headers } from 'next/headers'
 import { Htag } from "@/components/Htag/Htag";
 
+export const dynamic = 'force-static'
+
 const isExport = process.env.APP_ENV_EXPORT === 'production'
 
 export async function GET(request: Request) {
