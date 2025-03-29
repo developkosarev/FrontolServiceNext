@@ -83,3 +83,20 @@ jobs:
   #        && docker compose -f compose-frontol.yml down \
   #        && docker compose -f compose-frontol.yml up -d"
   #
+
+  run_to_server:
+    name: Rum command on ip6 server
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Execute ls on remote server
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            ls -la
