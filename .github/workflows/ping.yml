@@ -22,6 +22,8 @@ jobs:
 
       - name: Setup WARP
         uses: fscarmen/warp-on-actions@v1.3
+        with:
+          mode: client
 
       #- name: 02. Install SSH Key
       #  uses: shimataro/ssh-key-action@v2
