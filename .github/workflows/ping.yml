@@ -33,7 +33,7 @@ jobs:
           curl -6 ifconfig.co || echo "IPv6 not available"
 
       - name: Ping server IPv6
-        run: ping6 ${{ env.DEPLOY_SSH_HOST }} -c2
+        run: ping6 ${{ env.DEPLOY_SSH_HOST }} -c4
 
       #- name: Setup SSH
       #  run: |
@@ -48,13 +48,15 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Execute ls on remote server
-        uses: appleboy/ssh-action@v1.0.3
+        uses: appleboy/ssh-action@v1.2.2
         with:
           host: ${{ env.DEPLOY_SSH_HOST }}
           username: ${{ env.DEPLOY_SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY_CFGSOFT_DK }}
+          protocol: tcp6
           port: 22
           script: |
+            whoami
             ls -la  
 
       #- name: 02. Install SSH Key
