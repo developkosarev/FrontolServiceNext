@@ -36,7 +36,7 @@ jobs:
         with:
           host: ${{ env.DEPLOY_SSH_HOST }}
           username: ${{ env.DEPLOY_SSH_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          key: ${{ secrets.SSH_PRIVATE_KEY_CFGSOFT_DK }}
           port: 22
           script: |
             ls -la  
