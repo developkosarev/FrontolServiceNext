@@ -22,11 +22,11 @@ jobs:
           echo "Deploy application"
           echo "Appication name: ${{ env.DEPLOY_PACKAGE_NAME }}"
 
-      #- name: Setup WARP
-      #  uses: fscarmen/warp-on-actions@v1.3
-      #  with:
-      #    stack: dual
-      #    mode: client
+      - name: Setup WARP
+        uses: fscarmen/warp-on-actions@v1.3
+        with:
+          stack: dual
+          mode: client
 
       #- name: Check IPv6
       #  run: |
