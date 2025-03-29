@@ -3,6 +3,7 @@ env:
   DEPLOY_PACKAGE_NAME : "frontol-service-next-${{ github.sha }}"
   DEPLOY_VERSION : "v0.0.1"
   DEPLOY_FOLDER : "docker"
+  DEPLOY_SSH_HOST : "dev1.smarteule.com"
 
 on:
   workflow_dispatch: {}
@@ -23,7 +24,21 @@ jobs:
       - name: Setup WARP
         uses: fscarmen/warp-on-actions@v1.3
         with:
+          stack: dual
           mode: client
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Execute ls on remote server
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ env.SSH_HOST }}
+          username: ${{ env.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            ls -la  
 
       #- name: 02. Install SSH Key
       #  uses: shimataro/ssh-key-action@v2
