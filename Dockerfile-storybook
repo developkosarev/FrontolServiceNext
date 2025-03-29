@@ -1,0 +1,28 @@
+# Stage 1: Build the Storybook static files
+FROM node:20-alpine AS build
+LABEL org.opencontainers.image.source="https://github.com/developkosarev/FrontolServiceNext"
+LABEL org.opencontainers.image.title="FrontolServiceNext-Storybook"
+LABEL org.opencontainers.image.authors="develop.kosarev@gmail.com"
+LABEL org.opencontainers.image.version="0.0.1"
+
+WORKDIR /opt/app
+
+# Copy package.json and package-lock.json
+COPY package*.json ./
+RUN npm install
+
+ADD . .
+ENV NODE_ENV=production
+RUN npm run build-storybook
+
+# Stage 2: Serve the static files using Nginx
+FROM nginx:alpine
+
+# Copy the built Storybook static files from the build stage
+COPY --from=build /opt/app/storybook-static /usr/share/nginx/html
+
+# Expose port 80
+EXPOSE 80
+
+# Start Nginx server
+CMD ["nginx", "-g", "daemon off;"]

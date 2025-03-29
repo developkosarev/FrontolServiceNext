@@ -1,4 +1,5 @@
 import { headers } from 'next/headers'
+import { Htag } from "@/components/Htag/Htag";
 
 export const dynamic = 'force-static'
 
@@ -12,10 +13,14 @@ export async function GET(request: Request) {
     referer = headersList.get('referer') as string
   }
 
-  const body = 'Hello, users.js!'
+  //const body = `<Htag tag='h1'>Renderer. Рендер</Htag>`
+  const body = `<H1>Renderer. Рендер</H1>`
 
   return new Response(body, {
         status: 200,
-        headers: { referer: referer }
+        headers: {
+            referer: referer,
+            'Content-Type': 'text/html; charset=utf-8'
+        }
       })
 }
