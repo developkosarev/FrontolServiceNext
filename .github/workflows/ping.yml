@@ -33,7 +33,7 @@ jobs:
           curl -6 ifconfig.co || echo "IPv6 not available"
 
       - name: Ping server IPv6
-        run: ping6 ${{ env.DEPLOY_SSH_HOST }}
+        run: ping6 ${{ env.DEPLOY_SSH_HOST }} -c2
 
       - name: Setup SSH
         run: |
