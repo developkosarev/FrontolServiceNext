@@ -28,6 +28,22 @@ jobs:
           stack: dual
           mode: client
 
+      - name: Check IPv6
+        run: |
+          curl -6 ifconfig.co || echo "IPv6 not available"
+
+      - name: Ping server IPv6
+        run: ping6 ${{ env.DEPLOY_SSH_HOST }}
+
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY_CFGSOFT_DK }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+
+      - name: Connect to server via SSH
+        run: ssh -6 -o StrictHostKeyChecking=no ${{ env.DEPLOY_SSH_USER }}@[${{ env.DEPLOY_SSH_HOST }}] "echo 'Connected successfully'"
+
       - name: Checkout repository
         uses: actions/checkout@v4
 
