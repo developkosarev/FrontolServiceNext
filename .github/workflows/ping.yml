@@ -1,0 +1,76 @@
+name: Ping hosts
+env:
+  DEPLOY_PACKAGE_NAME : "frontol-service-next-${{ github.sha }}"
+  DEPLOY_VERSION : "v0.0.1"
+  DEPLOY_FOLDER : "docker"
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [add-action-ping]
+
+jobs:
+  deploy-frontol:
+    name: Ping
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 01. Execute few commands
+        run: |
+          echo "Deploy application"
+          echo "Appication name: ${{ env.DEPLOY_PACKAGE_NAME }}"
+
+      - name: Setup WARP
+        uses: fscarmen/warp-on-actions@v1.3
+        with:
+          stack: dual
+          mode: client
+
+      #- name: Check IPv6
+      #  run: |
+      #    curl -6 ifconfig.co || echo "IPv6 not available"
+
+      #- name: Ping server IPv6
+      #  run: ping6 ${{ env.DEPLOY_SSH_HOST }} -c4
+
+      #- name: Setup SSH
+      #  run: |
+      #    mkdir -p ~/.ssh
+      #    echo "${{ secrets.SSH_PRIVATE_KEY_CFGSOFT_DK }}" > ~/.ssh/id_rsa
+      #    chmod 600 ~/.ssh/id_rsa
+
+      #- name: Connect to server via SSH
+      #  run: ssh -6 -o StrictHostKeyChecking=no ${{ env.DEPLOY_SSH_USER }}@[${{ env.DEPLOY_SSH_HOST }}] "echo 'Connected successfully'"
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Execute ls on remote server
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.SSH_HOST_NEXT_IP6 }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          protocol: tcp6
+          port: 22
+          script: |
+            whoami
+            ls -la
+
+      #- name: 02. Install SSH Key
+      #  uses: shimataro/ssh-key-action@v2
+      #  with:
+      #    key: ${{ secrets.SSH_PRIVATE_KEY }}
+      #    known_hosts: 95.91.215.244
+      #
+      #- name: 03. Adding Known Hosts
+      #  run: ssh-keyscan -H 95.91.215.244
+
+      #- name: 02. Ping google (no permission)
+      #  run: ping google.com -c4
+      #
+      #- name: 03. Ping google
+      #  run: ping ipv6.google.com -c4
+      #
+      #- name: 04. Ping host
+      #  run: ping ${{ secrets.SSH_HOST_V2 }} -c4
