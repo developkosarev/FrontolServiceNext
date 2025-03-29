@@ -28,12 +28,12 @@ jobs:
       #    stack: dual
       #    mode: client
 
-      - name: Check IPv6
-        run: |
-          curl -6 ifconfig.co || echo "IPv6 not available"
+      #- name: Check IPv6
+      #  run: |
+      #    curl -6 ifconfig.co || echo "IPv6 not available"
 
-      - name: Ping server IPv6
-        run: ping6 ${{ env.DEPLOY_SSH_HOST }} -c4
+      #- name: Ping server IPv6
+      #  run: ping6 ${{ env.DEPLOY_SSH_HOST }} -c4
 
       #- name: Setup SSH
       #  run: |
