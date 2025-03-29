@@ -3,7 +3,6 @@ env:
   DEPLOY_PACKAGE_NAME : "frontol-service-next-${{ github.sha }}"
   DEPLOY_VERSION : "v0.0.1"
   DEPLOY_FOLDER : "docker"
-  DEPLOY_SSH_USER : "dk"
   DEPLOY_SSH_HOST : "2a02:8109:838c:c00:215:5dff:fe00:5203"
 
 on:
@@ -50,7 +49,7 @@ jobs:
       - name: Execute ls on remote server
         uses: appleboy/ssh-action@v1
         with:
-          host: ${{ env.DEPLOY_SSH_HOST }}
+          host: ${{ secrets.SSH_HOST_V2 }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           protocol: tcp6
