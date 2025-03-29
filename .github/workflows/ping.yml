@@ -21,7 +21,7 @@ jobs:
           echo "Appication name: ${{ env.DEPLOY_PACKAGE_NAME }}"
 
       - name: Setup WARP
-        uses: fscarmen/warp-on-actions@v1.0
+        uses: fscarmen/warp-on-actions@v1.3
 
       #- name: 02. Install SSH Key
       #  uses: shimataro/ssh-key-action@v2
