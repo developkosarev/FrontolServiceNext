@@ -51,13 +51,13 @@ jobs:
         uses: appleboy/ssh-action@v1
         with:
           host: ${{ env.DEPLOY_SSH_HOST }}
-          username: ${{ env.DEPLOY_SSH_USER }}
+          username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           protocol: tcp6
           port: 22
           script: |
             whoami
-            ls -la  
+            ls -la
 
       #- name: 02. Install SSH Key
       #  uses: shimataro/ssh-key-action@v2
