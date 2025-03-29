@@ -3,7 +3,6 @@ env:
   DEPLOY_PACKAGE_NAME : "frontol-service-next-${{ github.sha }}"
   DEPLOY_VERSION : "v0.0.1"
   DEPLOY_FOLDER : "docker"
-  DEPLOY_SSH_HOST : "2a02:8109:838c:c00:215:5dff:fe00:5203"
 
 on:
   workflow_dispatch: {}
