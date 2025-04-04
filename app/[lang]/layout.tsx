@@ -28,7 +28,7 @@ export default async function RootLayout( props: {
   const { children } = props;
 
   return (
-  <html lang="ru">
+  <html lang={params.lang}>
     <body className={inter.className}>
       <div className="wrapper">
           <Gtm/>
