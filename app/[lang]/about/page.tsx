@@ -9,9 +9,9 @@ export async function generateStaticParams() {
 }
 
 export const metadata: Metadata = {
-    title: 'Info',
-    description: 'Info',
-    keywords: 'Info'
+    title: 'О нас',
+    description: 'О нас',
+    keywords: 'О нас'
 }
 
 export default async function Page(props: {
@@ -19,16 +19,11 @@ export default async function Page(props: {
   }) {
     const { lang } = await props.params;
     const dict = await getDictionary(lang);
-    
+
     return (
         <div className="container">
-            <Htag tag='h1'>{dict.pages.info}</Htag>
-            <p>192.168.0.77</p>
-            <ul>
-                <li>Frontol next: <a href="http://frontol.dk-dev.space/" target="_blank">http://frontol.dk-dev.space/</a></li>
-                <li>Nest: <a href="http://nest.dk-dev.space/" target="_blank">http://nest.dk-dev.space/</a></li>
-                <li>{ lang }</li>
-            </ul>
+            <Htag tag='h1'>О нас</Htag>
+            <p className="text-center">О нас</p>
         </div>
     )
 }

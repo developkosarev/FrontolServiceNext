@@ -1,7 +1,13 @@
 import React from "react";
 import Image from 'next/image'
 import type { Metadata } from 'next'
-import {Htag} from "../../components/Htag/Htag";
+import { Htag } from "@/components/Htag/Htag";
+import { getDictionary } from '@/dictionaries/dictionaries';
+import { Locale } from '@/i18n-config';
+
+export async function generateStaticParams() {
+  return [{ lang: 'ru' }, { lang: 'en' }]
+}
 
 export const metadata: Metadata = {
     title: 'Описание FrontolServiceAddon',
@@ -9,7 +15,12 @@ export const metadata: Metadata = {
     keywords: 'Frontol как воспроизвести переполнение таблицы'
 }
 
-export default function Page() {
+export default async function Page(props: {
+  params: Promise<{ lang: Locale }>;
+}) {
+  const { lang } = await props.params;
+  const dict = await getDictionary(lang);
+
     return (
         <div className="container">
           <Htag tag='h1'>Как воспроизвести проблему</Htag>

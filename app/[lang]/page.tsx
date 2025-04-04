@@ -1,8 +1,19 @@
 import Image from 'next/image'
-import styles from './page.module.css'
+import styles from '@/page.module.css'
 import React from "react";
+import { getDictionary } from '@/dictionaries/dictionaries';
+import { Locale } from '@/i18n-config';
 
-export default function Home() {
+export async function generateStaticParams() {
+  return [{ lang: 'ru' }, { lang: 'en' }]
+}
+
+export default async function Home(props: {
+  params: Promise<{ lang: Locale }>;
+}) {
+  const { lang } = await props.params;
+  const dict = await getDictionary(lang);
+
   return (
     <div className="container">
       <h1>Причины роста базы данных Frontol</h1>
