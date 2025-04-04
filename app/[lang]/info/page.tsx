@@ -10,12 +10,6 @@ export const metadata: Metadata = {
     keywords: 'Info'
 }
 
-interface PageProps {
-    params: {
-        lang: 'en' | 'ru'
-    }
-}
-
 export default async function Page(props: {
     params: Promise<{ lang: Locale }>;
   }) {
