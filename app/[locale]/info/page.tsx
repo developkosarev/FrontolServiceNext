@@ -1,5 +1,5 @@
 import React from "react";
-import {Metadata} from "next";
+import { Metadata } from "next";
 import { Htag } from "@/components/Htag/Htag";
 
 export const metadata: Metadata = {
@@ -8,7 +8,9 @@ export const metadata: Metadata = {
     keywords: 'Info'
 }
 
-export default function Page() {
+export default async function Page(props: { params: Promise<{ locale: string }> }) {
+    const { locale } = await props.params;
+
     return (
         <div className="container">
             <Htag tag='h1'>Info</Htag>

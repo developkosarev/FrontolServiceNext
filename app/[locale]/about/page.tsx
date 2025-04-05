@@ -1,27 +1,21 @@
-import BackButton from './BackButton';
-import styles from '../page.module.css';
-import LanguageChanger from '@/components/LanguageChanger';
-import TranslationsProvider from '@/components/TranslationsProvider';
-import initTranslations from '@/app/i18n';
+import React from "react";
+import { Metadata } from "next";
+import { Htag } from "@/components/Htag/Htag";
 
-const i18nNamespaces = ['about', 'test'];
+export const metadata: Metadata = {
+    title: 'О нас',
+    description: 'О нас',
+    keywords: 'О нас'
+}
 
 async function About(props: { params: Promise<{ locale: string }> }) {
   const { locale } = await props.params;
 
-  const { t, resources } = await initTranslations(locale, i18nNamespaces);
-
   return (
-    <TranslationsProvider
-      namespaces={i18nNamespaces}
-      locale={locale}
-      resources={resources}>
-      <main className={styles.main}>
-        <h1>{t('about_header')}</h1>
-        <BackButton />
-        <LanguageChanger />
-      </main>
-    </TranslationsProvider>
+      <div className="container">
+          <Htag tag='h1'>О нас</Htag>
+          <p className="text-center">О нас</p>
+      </div>
   );
 }
 

@@ -1,7 +1,7 @@
 import React from "react";
 import Image from 'next/image'
 import type { Metadata } from 'next'
-import {Htag} from "../../components/Htag/Htag";
+import {Htag} from "@/components/Htag/Htag";
 
 export const metadata: Metadata = {
     title: 'Скачать FrontolServiceAddon',
@@ -9,7 +9,9 @@ export const metadata: Metadata = {
     keywords: 'Скачать FrontolServiceAddon, Frontol cветка, Frontol рост базы данных, Frontol remaind'
 }
 
-export default function Page() {
+export default async function Download(props: { params: Promise<{ locale: string }> }) {
+    const { locale } = await props.params;
+
     return (
         <div className="container">
             <Htag tag='h1'>Скачать Frontol Service Add-on</Htag>
