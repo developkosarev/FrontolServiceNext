@@ -36,6 +36,9 @@ docker build --tag frontol-service-next-storybook:v0.0.1 --file Dockerfile-story
 docker run -d -p 80:80 --name frontol-service-next-storybook frontol-service-next-storybook:v0.0.1
 ```
 
+## i18next-example-nextjs-15
+https://github.com/i18nexus/next-i18n-router/tree/main/examples/i18next-example-nextjs-15
+
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
