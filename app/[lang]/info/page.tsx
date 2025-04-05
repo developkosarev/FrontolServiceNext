@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import { Htag } from "@/components/Htag/Htag";
 import { getDictionary } from '@/dictionaries/dictionaries';
 import { Locale } from '@/i18n-config';
+import LocaleSwitcher from "@/components/LocaleSwitcher/LocaleSwitcher";
 
 export async function generateStaticParams() {
     return [{ lang: 'ru' }, { lang: 'en' }]
@@ -29,6 +30,7 @@ export default async function Page(props: {
                 <li>Nest: <a href="http://nest.dk-dev.space/" target="_blank">http://nest.dk-dev.space/</a></li>
                 <li>{ lang }</li>
             </ul>
+            <LocaleSwitcher />
         </div>
     )
 }
