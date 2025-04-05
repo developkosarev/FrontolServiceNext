@@ -2,10 +2,10 @@ import Image from 'next/image'
 import styles from '@/page.module.css'
 import React from "react";
 import { getDictionary } from '@/dictionaries/dictionaries';
-import { Locale } from '@/i18n-config';
+import { i18n, type Locale } from '@/i18n-config';
 
 export async function generateStaticParams() {
-  return [{ lang: 'ru' }, { lang: 'en' }]
+    return i18n.locales.map((locale) => ({ lang: locale }));
 }
 
 export default async function Home(props: {
