@@ -1,13 +1,18 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
-export default function middleware(req: NextRequest) {
-    if (req.nextUrl.pathname.startsWith('/FrontolServiceAddon/FrontolServiceAddon.xml')) {
+import { i18nRouter } from 'next-i18n-router';
+import i18nConfig from './i18nConfig';
+
+
+export default function middleware(request: NextRequest) {
+    if (request.nextUrl.pathname.startsWith('/FrontolServiceAddon/FrontolServiceAddon.xml')) {
         const time = Date.now();
         console.log({time: time});
     }
+    return i18nRouter(request, i18nConfig);
 
-    return NextResponse.next()
+    //return NextResponse.next()
 
 
     //const path = req.nextUrl.pathname
@@ -23,6 +28,11 @@ export default function middleware(req: NextRequest) {
 
     //return response
 }
+
+// only applies this middleware to files in the app directory
+export const config = {
+    matcher: '/((?!api|static|.*\\..*|_next).*)'
+};
 
 //export const config = {
 //    matcher: [

@@ -3,6 +3,7 @@
 import React, { useEffect } from "react"
 import variables from '@/app/variables.module.scss'
 import styles from './Footer.module.scss'
+import LanguageChanger from "@/components/LanguageChanger";
 
 export const Footer = (): React.ReactElement => {
     useEffect(() => {
@@ -17,6 +18,7 @@ export const Footer = (): React.ReactElement => {
     return (
         <footer className={`${styles.pageFooter} font-small`} style={{ color: variables.footerBackgroundColor }}>
             <div className="footer-copyright text-dark text-center pt-2">© 2023 Copyright:</div>
+            <LanguageChanger/>
         </footer>
     );
 }
