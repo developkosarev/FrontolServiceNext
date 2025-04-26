@@ -51,7 +51,7 @@ jobs:
       - name: 05. Execute ls on remote server
         uses: appleboy/ssh-action@v1
         with:
-          host: ${{ secrets.SSH_HOST_NEXT_IP6 }}
+          host: ${{ vars.SSH_HOST_NEXT_IP6 }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           protocol: tcp6
