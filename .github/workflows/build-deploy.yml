@@ -67,14 +67,14 @@ jobs:
           echo "Appication name: ${{ env.DEPLOY_PACKAGE_NAME }}"
 
       #IP6
-      - name: Setup WARP
+      - name: 02. Setup WARP
         uses: fscarmen/warp-on-actions@v1.3
         with:
           stack: dual
           mode: client
 
       #IP6
-      - name: Execute ls on remote server
+      - name: 03. Execute ls on remote server
         uses: appleboy/ssh-action@v1
         with:
           host: ${{ secrets.SSH_HOST_NEXT_IP6 }}
