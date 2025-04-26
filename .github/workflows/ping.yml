@@ -42,8 +42,8 @@ jobs:
       #- name: Connect to server via SSH
       #  run: ssh -6 -o StrictHostKeyChecking=no ${{ env.DEPLOY_SSH_USER }}@[${{ env.DEPLOY_SSH_HOST }}] "echo 'Connected successfully'"
 
-      - name: 03. Checkout repository
-        uses: actions/checkout@v4
+      #- name: 03. Checkout repository
+      #  uses: actions/checkout@v4
 
       - name: 04. Execute ls on remote server
         uses: appleboy/ssh-action@v1
