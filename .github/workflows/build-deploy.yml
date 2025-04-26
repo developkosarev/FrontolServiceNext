@@ -84,7 +84,23 @@ jobs:
           port: 22
           script: |
             whoami
-            ls -la    
+            ls -la
+
+      #IP6
+      - name: 04. Restart container
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ vars.SSH_HOST_NEXT_IP6 }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          protocol: tcp6
+          port: 22
+          script: |
+            cd /home/${{ secrets.SSH_USER }}/${{ env.DEPLOY_FOLDER }}
+            docker compose -f compose-frontol.yml pull
+            docker compose -f compose-frontol.yml down
+            docker compose -f compose-frontol.yml up -d
+            
 
   #    - name: 02. Install SSH Key
   #      uses: shimataro/ssh-key-action@v2
