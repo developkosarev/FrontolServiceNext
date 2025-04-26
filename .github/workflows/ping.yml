@@ -33,6 +33,9 @@ jobs:
       #- name: Ping server IPv6
       #  run: ping6 ${{ env.DEPLOY_SSH_HOST }} -c4
 
+      - name: Ping server IPv6
+        run: ping6 ${{ vars.SSH_HOST_NEXT_IP6 }} -c4
+
       #- name: Setup SSH
       #  run: |
       #    mkdir -p ~/.ssh
