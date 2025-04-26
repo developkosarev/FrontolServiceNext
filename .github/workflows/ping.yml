@@ -26,14 +26,14 @@ jobs:
           stack: dual
           mode: client
 
-      - name: Check IPv6
+      - name: 03. Check IPv6
         run: |
           curl -6 ifconfig.co || echo "IPv6 not available"
 
       #- name: Ping server IPv6
       #  run: ping6 ${{ env.DEPLOY_SSH_HOST }} -c4
 
-      - name: Ping server IPv6
+      - name: 04. Ping server IPv6
         run: ping6 ${{ vars.SSH_HOST_NEXT_IP6 }} -c4
 
       #- name: Setup SSH
@@ -48,7 +48,7 @@ jobs:
       #- name: 03. Checkout repository
       #  uses: actions/checkout@v4
 
-      - name: 04. Execute ls on remote server
+      - name: 05. Execute ls on remote server
         uses: appleboy/ssh-action@v1
         with:
           host: ${{ secrets.SSH_HOST_NEXT_IP6 }}
